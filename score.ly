@@ -192,3 +192,47 @@ violin-using-repeats-more-lines = \relative c' {
     }
   }
 }
+\bookpart {
+  \header {
+    title = "Violin Concerto in E major (Spring) 1st movt"
+    subtitle = "Introduction for easy violin, in D major"
+    subsubtitle = "Expanded, including missing notes"
+    composer = "Vivaldi"
+  }
+
+  \score {
+    << \new Staff \with {
+      fontSize = #+4
+      \override StaffSymbol.staff-space = #(magstep +4)
+    } {
+    \keepWithTag #'include {
+        \violin-using-repeats-more-lines
+      }
+    } >>
+    \layout {
+      indent = 0.0
+    }
+  }
+}
+\bookpart {
+  \header {
+    title = "Violin Concerto in E major (Spring) 1st movt"
+    subtitle = "Introduction for easy violin, in D major"
+    subsubtitle = "Expanded, excluding missing notes"
+    composer = "Vivaldi"
+  }
+
+  \score {
+    << \new Staff \with {
+      fontSize = #+4
+      \override StaffSymbol.staff-space = #(magstep +4)
+    } {
+      \removeWithTag #'include {
+        \violin-using-repeats-more-lines
+      }
+    } >>
+    \layout {
+      indent = 0.0
+    }
+  }
+}
