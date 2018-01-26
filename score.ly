@@ -1,6 +1,7 @@
 \version "2.18.2"
 
 #(set-default-paper-size "a4" 'landscape)
+#(set-global-staff-size 26)
 
 violin = \relative c' {
   \key d \major
@@ -60,6 +61,25 @@ violin-using-repeats = \relative c' {
   system-system-spacing = #'((basic-distance . 20) (padding . 1))
 }
 
+\bookpart {
+  \header {
+    title = "Vivaldi - Violin Concerto in E major, RV 269 (Spring) First movement"
+    subtitle = "Introduction for easy violin, in D major"
+    subsubtitle = "Expanded, including missing notes, with letter note heads"
+    composer = "Vivaldi"
+  }
+
+  \score {
+    \keepWithTag #'include {
+      \easyHeadsOn
+      \violin
+    }
+    \layout {
+      indent = 0.0
+      % #(layout-set-staff-size 26)
+    }
+  }
+}
 \bookpart {
   \header {
     title = "Vivaldi - Violin Concerto in E major, RV 269 (Spring) First movement"
