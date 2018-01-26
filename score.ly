@@ -103,9 +103,32 @@ violin-using-repeats-more-lines = \relative c' {
       \override StaffSymbol.staff-space = #(magstep +4)
     } {
     \keepWithTag #'include {
-      \easyHeadsOn
-      \violin-using-repeats-more-lines
+        \easyHeadsOn
+        \violin-using-repeats-more-lines
+      }
+    } >>
+    \layout {
+      indent = 0.0
     }
+  }
+}
+\bookpart {
+  \header {
+    title = "Violin Concerto in E major (Spring) 1st movt"
+    subtitle = "Introduction for easy violin, in D major"
+    subsubtitle = "Expanded, excluding missing notes, with letter note heads"
+    composer = "Vivaldi"
+  }
+
+  \score {
+    << \new Staff \with {
+      fontSize = #+4
+      \override StaffSymbol.staff-space = #(magstep +4)
+    } {
+      \removeWithTag #'include {
+        \easyHeadsOn
+        \violin-using-repeats-more-lines
+      }
     } >>
     \layout {
       indent = 0.0
